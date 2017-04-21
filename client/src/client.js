@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 
 import Homepage from './components/Homepage';
 import Welcome from './components/Welcome';
@@ -13,7 +13,7 @@ import AddBookContainer from './components/AddBookContainer';
 filepicker.setKey('AlQMzdU6vSnemCoSeEhy3z');
 
 ReactDOM.render(
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={Homepage}>
       <IndexRoute component={Welcome} />
       <Route path="/about" component={About} />
