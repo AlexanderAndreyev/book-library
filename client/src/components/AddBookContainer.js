@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { hashHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 import AddBookForm from './AddBookForm';
 
-export default class BooksContainer extends React.Component {
+export default class AddBooksContainer extends React.Component {
 
   constructor() {
     super();
@@ -42,7 +41,10 @@ export default class BooksContainer extends React.Component {
 
   render() {
     return (
-      <AddBookForm submit={ this.submit } setGame={ this.setGame } />
+      <div>
+        <Link to="/games">Return to books</Link>
+        <AddBookForm submit={ this.submit } setGame={ this.setGame } />
+      </div>
     );
   }
 }

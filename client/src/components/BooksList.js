@@ -8,6 +8,7 @@ class BooksList extends React.Component {
     const result = [];
     for (let i = 0; i < books.length; i++) {
       result.push(<Book key={i}
+                        number={i}
                         title={books[i].title}
                         author={books[i].author}
                         description={books[i].description}
@@ -15,6 +16,8 @@ class BooksList extends React.Component {
                         postDate={books[i].postDate}
                         id={books[i]._id}
                         deleteBook={this.props.deleteBook}
+                        updateBook={this.props.updateBook}
+                        upBook={this.props.upBook}
                   />);
     }
     return result;
@@ -30,7 +33,10 @@ class BooksList extends React.Component {
 }
 
 BooksList.propTypes = {
-  books: PropTypes.array.isRequired
+  books: PropTypes.array.isRequired,
+  deleteBook: PropTypes.func.isRequired,
+  updateBook: PropTypes.func.isRequired,
+  upBook: PropTypes.func.isRequired
 }
 
 export default BooksList;

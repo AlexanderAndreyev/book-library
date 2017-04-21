@@ -10,8 +10,6 @@ import Archive from './components/Archive';
 import BooksContainer from './components/BooksContainer';
 import AddBookContainer from './components/AddBookContainer';
 
-filepicker.setKey('AlQMzdU6vSnemCoSeEhy3z');
-
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Homepage}>
