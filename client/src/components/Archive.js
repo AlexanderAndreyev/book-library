@@ -4,14 +4,14 @@ import { Link } from 'react-router';
 export default class Archive extends React.Component {
   render() {
     return (
-      <div>
-        <div>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/games/add">Save new book</Link></li>
+      <div className="main">
+        <div className="books">
+          <ul className="menu">
+            <li><Link className="link" to="/">Home</Link></li>
+            <li><Link className="link" to="/games/add">Save</Link></li>
           </ul>
         </div>
-        <div>
+        <div className="content-books">
           { this.props.children }
         </div>
       </div>

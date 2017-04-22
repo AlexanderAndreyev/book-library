@@ -5,8 +5,8 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <p>Press "Browse" to start exploring the library!</p>
-        <p><Link to="/games">Browse</Link></p>
+        <p className="main-text">Press "Browse" to start exploring the library!</p>
+        <button className="browse-btn"><Link to="/games">Browse</Link></button>
       </div>
     );
   }

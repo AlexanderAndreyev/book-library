@@ -15,10 +15,10 @@ export default class AddBooksContainer extends React.Component {
 
   setGame() {
     const newGame = {
-      title: document.getElementById("title").value,
-      author: document.getElementById("author").value,
-      description: document.getElementById("description").value,
-      picture: document.getElementById("url").value
+      title: document.getElementsByClassName("title")[0].value,
+      author: document.getElementsByClassName("author")[0].value,
+      description: document.getElementsByClassName("description")[0].value,
+      picture: document.getElementsByClassName("url")[0].value
     };
     this.setState({ newGame });
   }
@@ -41,10 +41,7 @@ export default class AddBooksContainer extends React.Component {
 
   render() {
     return (
-      <div>
-        <Link to="/games">Return to books</Link>
         <AddBookForm submit={ this.submit } setGame={ this.setGame } />
-      </div>
     );
   }
 }

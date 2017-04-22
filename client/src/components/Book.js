@@ -13,15 +13,18 @@ function toggleClass(number) {
 
 function Book({ number, title, author, description, picture, postDate, id, deleteBook, updateBook, upBook }) {
   return (
-    <div>
-      <h1>{ title }</h1>
-      <p>{ author }</p>
-      <p>{ description }</p>
-      <img src={ picture } width="150" height="200"/>
-      <p>{ postDate }</p>
-      <button onClick={ () => deleteBook(id) }>Delete the book</button>
-      <button onClick={ () => toggleClass(number) }>Update the book</button>
+    <div className="book">
+      <div className="book-section">
+        <h1 className="title">{ title }</h1>
+        <p className="author">{ author }</p>
+        <p className="description">{ description }</p>
+        <img className="picture" src={ picture } width="150" height="200"/>
+        <p className="data">{ postDate.slice(0,10) }</p>
+        <button className="delete-btn" onClick={ () => deleteBook(id) }>Delete the book</button>
+        <button className="update-btn" onClick={ () => toggleClass(number) }>Update the book</button>
+      </div>
       <div className="update-form" hidden>
+        <button className="return-btn" onClick={ () => toggleClass(number) }>Return</button>
         <form onSubmit={ () => updateBook(id, number) }>
           <div>
             <p>Please enter a title</p>
@@ -39,7 +42,7 @@ function Book({ number, title, author, description, picture, postDate, id, delet
             <p>Please enter an url of the picture</p>
             <input className="up-url" onChange={ () => upBook(number) } />
           </div>
-          <button type="submit">Update a book</button>
+          <button type="submit" className="submit-btn">Update a book</button>
         </form>
       </div>
     </div>
