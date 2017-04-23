@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 app.use('/api', router);
 
 app.get('/', (req, res) => {
-  res.sendFile('client/dist/index.html', { root: __dirname });
+  res.sendFile(__dirname + '/client/dist/index.html');
 });
 
 const PORT = process.env.PORT || 8080;
